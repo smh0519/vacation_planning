@@ -22,19 +22,19 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
     switch (slide.type) {
       case 'title':
         return (
-          <div className="h-full flex flex-col justify-center items-center text-center px-12">
-            <div className={`w-20 h-20 rounded-full ${themeBg} flex items-center justify-center mb-8 text-4xl shadow-inner border ${themeBorder}`}>
+          <div className="h-full flex flex-col justify-center items-center text-center p-5 sm:p-8 md:p-10">
+            <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${themeBg} flex items-center justify-center mb-6 sm:mb-8 text-3xl sm:text-4xl shadow-inner border ${themeBorder}`}>
               {isJeju ? '🍊' : '🌊'}
             </div>
-            <h1 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight max-w-3xl">
               {slide.title}
             </h1>
             {slide.subtitle && (
-              <p className="text-slate-400 text-lg md:text-xl font-medium tracking-wide">
+              <p className="text-slate-400 text-base sm:text-lg md:text-xl font-medium tracking-wide">
                 {slide.subtitle}
               </p>
             )}
-            <div className="absolute bottom-10 text-xs text-slate-500 tracking-widest uppercase">
+            <div className="absolute bottom-6 sm:bottom-10 text-[10px] sm:text-xs text-slate-500 tracking-widest uppercase">
               2박 3일 뚜벅이 일정 비교표 • {isJeju ? 'JEJU ISLAND' : 'BUSAN METROPOLITAN'}
             </div>
           </div>
@@ -42,22 +42,22 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
 
       case 'route':
         return (
-          <div className="h-full flex flex-col justify-between p-10">
+          <div className="h-full flex flex-col justify-between p-5 sm:p-8 md:p-10">
             {/* Header */}
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                <MapPin className={themeText} size={28} />
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-800 pb-3 sm:pb-4 mb-3 sm:mb-4 gap-2">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white flex items-center gap-2 sm:gap-3">
+                <MapPin className={themeText} size={24} />
                 <span>{slide.title}</span>
               </h2>
               {slide.routeDay && (
-                <span className={`px-4 py-1.5 rounded-full text-sm font-bold ${themeBadge} border ${themeBorder} shadow-lg`}>
+                <span className={`px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-bold ${themeBadge} border ${themeBorder} shadow-lg self-start sm:self-auto`}>
                   {slide.routeDay}
                 </span>
               )}
             </div>
 
             {/* Timeline Row Flow */}
-            <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4 overflow-y-auto pr-2 py-2">
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 overflow-y-auto pr-2 py-2">
               {slide.routeItems?.map((item, index) => (
                 <div 
                   key={index}
@@ -79,18 +79,18 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
 
       case 'cost':
         return (
-          <div className="h-full flex flex-col justify-between p-10">
+          <div className="h-full flex flex-col justify-between p-5 sm:p-8 md:p-10">
             {/* Header */}
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                <DollarSign className={themeText} size={28} />
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3 sm:pb-4 mb-3 sm:mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white flex items-center gap-2 sm:gap-3">
+                <DollarSign className={themeText} size={24} />
                 <span>{slide.title}</span>
               </h2>
-              <span className="text-xs text-slate-400 tracking-wider">1인 실계산 기준</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 tracking-wider">1인 기준</span>
             </div>
 
             {/* Cost Grid/Table */}
-            <div className="flex-1 flex flex-col justify-center gap-3 overflow-y-auto pr-2">
+            <div className="flex-1 flex flex-col justify-center gap-2 sm:gap-3 overflow-y-auto pr-2">
               {slide.costItems?.map((item, index) => (
                 <div 
                   key={index}
@@ -116,18 +116,18 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
 
       case 'spots':
         return (
-          <div className="h-full flex flex-col justify-between p-10">
+          <div className="h-full flex flex-col justify-between p-5 sm:p-8 md:p-10">
             {/* Header */}
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                <Calendar className={themeText} size={28} />
-                <span>{slide.title}</span>
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3 sm:pb-4 mb-3 sm:mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white flex items-center gap-2 sm:gap-3">
+                <Calendar className={themeText} size={24} />
+                <span className="truncate max-w-[200px] sm:max-w-none">{slide.title}</span>
               </h2>
-              <span className="text-xs text-slate-400 tracking-wider">Must-Visit 명소</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 tracking-wider shrink-0">Must-Visit</span>
             </div>
 
             {/* Spots Grid */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 overflow-y-auto pr-2 py-1">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 overflow-y-auto pr-2 py-1">
               {slide.spots?.map((spot, index) => (
                 <div 
                   key={index}
@@ -151,18 +151,18 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
 
       case 'tips':
         return (
-          <div className="h-full flex flex-col justify-between p-10">
+          <div className="h-full flex flex-col justify-between p-5 sm:p-8 md:p-10">
             {/* Header */}
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                <Lightbulb className={themeText} size={28} />
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3 sm:pb-4 mb-3 sm:mb-4">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white flex items-center gap-2 sm:gap-3">
+                <Lightbulb className={themeText} size={24} />
                 <span>{slide.title}</span>
               </h2>
-              <span className="text-xs text-slate-400 tracking-wider">안전하고 쾌적한 이동을 위해</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 tracking-wider">안전하고 쾌적하게</span>
             </div>
 
             {/* Tips List */}
-            <div className="flex-1 flex flex-col justify-center gap-4 overflow-y-auto pr-2">
+            <div className="flex-1 flex flex-col justify-center gap-3 sm:gap-4 overflow-y-auto pr-2">
               {slide.tips?.map((tip, index) => (
                 <div 
                   key={index}
@@ -180,14 +180,14 @@ export const TravelSlideRenderer: React.FC<TravelSlideRendererProps> = ({ slide,
 
       case 'map':
         return (
-          <div className="h-full flex flex-col justify-between p-10">
+          <div className="h-full flex flex-col justify-between p-5 sm:p-8 md:p-10">
             {/* Header */}
-            <div className="flex justify-between items-center border-b border-slate-800 pb-4 mb-4 shrink-0">
-              <h2 className="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                <Map className={themeText} size={28} />
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3 sm:pb-4 mb-3 sm:mb-4 shrink-0">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white flex items-center gap-2 sm:gap-3">
+                <Map className={themeText} size={24} />
                 <span>{slide.title}</span>
               </h2>
-              <span className="text-xs text-slate-400 tracking-wider">Interactive Map</span>
+              <span className="text-[10px] sm:text-xs text-slate-400 tracking-wider">Interactive Map</span>
             </div>
 
             {/* Map Container */}

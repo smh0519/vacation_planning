@@ -74,9 +74,9 @@ export const TravelPresenter: React.FC<TravelPresenterProps> = ({
         </span>
       </header>
 
-      {/* Main 16:9 Presentation Slide Canvas */}
+      {/* Main Responsive Presentation Slide Canvas */}
       <main className="flex-1 w-full flex items-center justify-center py-4 z-10">
-        <div className="w-full max-w-7xl aspect-video rounded-2xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col justify-between backdrop-blur-sm print-slide-container">
+        <div className="w-full max-w-7xl h-[75vh] md:h-auto md:aspect-video rounded-2xl bg-slate-900/80 border border-slate-800 shadow-2xl relative overflow-hidden flex flex-col justify-between backdrop-blur-sm print-slide-container">
           
           {/* Active slide renderer */}
           <TravelSlideRenderer slide={currentSlide} region={region} />
