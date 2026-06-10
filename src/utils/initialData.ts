@@ -8,6 +8,19 @@ export const jejuSlides: TravelSlide[] = [
     subtitle: "친구들과 함께 떠나는 낭만 가득 서부 코스"
   },
   {
+    id: "jeju-5",
+    type: "cost",
+    title: "💸 제주 뚜벅이 여행 예상 경비 (1인 기준)",
+    costItems: [
+      { category: "✈️ 왕복 항공권", price: "10만원", detail: "LCC 특가 기준! 비행기값은 부산 KTX보다 저렴하게 세이브 가능" },
+      { category: "🚕 현지 교통비(택시)", price: "???", detail: "렌터카가 없어 매번 택시 호출. 동선이 꼬이면 교통비 폭탄 위험 🚨" },
+      { category: "🏨 숙박비 (2박)", price: "약 8~10만 원", detail: "가성비 좋은 해변 인근 게스트하우스 또는 펜션 N분의 1" },
+      { category: "🥘 식비 & 카페", price: "약 15만 원", detail: "흑돼지구이, 갈치조림, 예쁜 오션뷰 카페 등 (제주 체감 물가 반영)" },
+      { category: "🎒 기타 (입장료/짐)", price: "약 3만 원", detail: "관광지 입장료 및 짐 가방 당일 배송 서비스 (뚜벅이 필수)" }
+    ],
+    highlightCostPoint: "항공권은 10만 원대로 저렴하지만, 뚜벅이라 택시비가 얼마나 나올지 알 수 없는 게 가장 큰 예산 펑크의 원인입니다! 🚕💦"
+  },
+  {
     id: "jeju-2",
     type: "route",
     title: "1일차 동선 (공항 & 애월 해안도로)",
@@ -71,18 +84,6 @@ export const jejuSlides: TravelSlide[] = [
         imageUrl: "https://images.unsplash.com/photo-1616422896504-2092cc7a20c9?auto=format&fit=crop&q=80&w=400",
         link: "https://map.kakao.com/link/search/한림공원"
       }
-    ]
-  },
-  {
-    id: "jeju-5",
-    type: "cost",
-    title: "제주 뚜벅이 여행 예상 경비 (1인 기준) ",
-    costItems: [
-      { category: "교통비", price: "35,000원", detail: "공항 버스비 및 간간이 이용할 카카오 택시비" },
-      { category: "숙박비 (2박)", price: "80,000원", detail: "가성비 좋은 해변 인근 게스트하우스 또는 펜션 N분의 1" },
-      { category: "식비 (6식)", price: "120,000원", detail: "흑돼지구이, 고기국수, 갈치조림, 카페 음료 비용 포함" },
-      { category: "입장료/체험", price: "25,000원", detail: "한림공원 입장료 및 가방 배송 비용" },
-      { category: "비상금", price: "30,000원", detail: "기념품 구매 및 돌발 교통비 대비" }
     ]
   }
 ];
